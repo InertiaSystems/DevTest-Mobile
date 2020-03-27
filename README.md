@@ -41,18 +41,22 @@ Doing this will setup an expo server which makes for easy and quick development.
 
 ![](./tunnel.png)
 
-This will make is so you do not have to be on he same network as your computer to access the application.
+This will make it so you do not have to be on he same network as your computer to access the application.
 
 ## The Assignment
 
-Create a two screen application. The first screen will be consist of two components.
+Create a two screen application. The first screen will consist of two components.
 
-- Button to navigate to the other screen
-- Button that increments a count and displays it in the label of the button
+### Screen 1:
+
+- Button to navigate to the second screen that is described below.
+- Button that when pressed will increment a count that is displayed in the label of the button.  _See example below:_ 
 
 ![](./button.jpg)
 
-On the second screen it will also consist two components - _`back`_ button that goes back to the original screen - A searchable and sortable list of our favorite lunch spots!
+### Screen 2:
+
+On the second screen it will also consist of two components - _`back`_ button that goes back to the original screen - A searchable and sortable list of our favorite lunch spots!
 
 #### For the list you can issue a GET request to this [endpoint](https://devapi.inertia.systems/devtest/lunchspecials.php).  It will contain a `JSON` response body with a field containing a list of restaurants and our favorite dish there.
 
@@ -86,7 +90,7 @@ For the search if a user inputs `soup` it should match both the `name` and `dish
 ]
 ```
 
-If a the input is `Soup`, `soUp`, `sup` or `nodle`. Then ids `1` and `2` should be on the list, whereas id `3` should not. The search should be able to handle minor misspellings or forgotten letters
+If the input is `Soup`, `soUp`, `sup` or `nodle`. Then ids `1` and `2` should be on the list, whereas id `3` should not. The search should be able to handle minor misspellings or forgotten letters
 
 You should be able to sort by `id`, `name` or `dish` by touching the header of each column.
 
