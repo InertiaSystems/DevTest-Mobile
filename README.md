@@ -58,7 +58,7 @@ Create a two screen application. The first screen will consist of two components
 
 On the second screen it will also consist of two components - _`back`_ button that goes back to the original screen - A searchable and sortable list of our favorite lunch spots!
 
-#### For the list you can issue a GET request to this [endpoint](https://devapi.inertia.systems/devtest/lunchspecials.php).  It will contain a `JSON` response body with a field containing a list of restaurants and our favorite dish there.
+#### For the list you can issue a HTTP GET request to this [endpoint](https://devapi.inertia.systems/devtest/lunchspecials.php).  It will contain a `JSON` response body with a field containing a list of restaurants and our favorite dish there.
 
 ```
 {
@@ -68,7 +68,7 @@ On the second screen it will also consist of two components - _`back`_ button th
 }
 ```
 
-For the search if a user inputs `soup` it should match both the `name` and `dish` fields in the objects. For example if given the list:
+For the search if a user inputs `soup` it should case-insensitive match both the `name` and `dish` fields in the objects. For example if given the list:
 
 ```
 [
@@ -80,7 +80,7 @@ For the search if a user inputs `soup` it should match both the `name` and `dish
   {
     id: 2,
     name: "Eveything Bowls",
-    dish: "Noddle Soup"
+    dish: "Noodle Soup"
   },
   {
     id: 3,
@@ -90,7 +90,8 @@ For the search if a user inputs `soup` it should match both the `name` and `dish
 ]
 ```
 
-If the input is `Soup`, `soUp`, `sup` or `nodle`. Then ids `1` and `2` should be on the list, whereas id `3` should not. The search should be able to handle minor misspellings or forgotten letters
+The search should be able to handle minor misspellings or forgotten letters.
+If the input is `soup`, `sOUP`, `sup` or `nodle`. Then ids `1` and `2` should be on the list, whereas id `3` should not. 
 
 You should be able to sort by `id`, `name` or `dish` by touching the header of each column.
 
